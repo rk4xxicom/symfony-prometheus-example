@@ -1,0 +1,22 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude(['Migrations'])
+    ->in(__DIR__.'/src')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@Symfony' => true,
+        '@PHP71Migration' => true,
+        '@DoctrineAnnotation' => true,
+        'phpdoc_order' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'ordered_class_elements' => true,
+        'ordered_imports' => true,
+        'phpdoc_add_missing_param_annotation' => [
+            'only_untyped' => false,
+        ],
+    ])
+    ->setFinder($finder)
+;
