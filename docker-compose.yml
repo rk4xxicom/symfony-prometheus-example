@@ -45,6 +45,14 @@ services:
             - 9090:9090
         volumes:
             - ./config/prometheus:/etc/prometheus
+    mtail:
+        build:
+            context: ./config/mtail
+            dockerfile: mtail.Dockerfile
+        ports:
+            - 3903:3903
+        volumes:
+            - ./var/log:/mnt/log
 
     mailhog:
         image: mailhog/mailhog

@@ -1,0 +1,10 @@
+counter user_total
+counter error_total
+
+/request\.ERROR/ {
+  error_total++
+}
+
+/Saved user/ {
+  user_total++
+}
