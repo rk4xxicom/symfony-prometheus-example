@@ -39,6 +39,13 @@ services:
             - POSTGRES_DB=${DB_NAME-dev}
             - POSTGRES_USER=${DB_USER-dev}
             - POSTGRES_PASSWORD=${DB_PASSWORD-dev}
+    prometheus:
+        image: prom/prometheus
+        ports:
+            - 9090:9090
+        volumes:
+            - ./config/prometheus:/etc/prometheus
+
     mailhog:
         image: mailhog/mailhog
         ports:
