@@ -21,3 +21,7 @@ scrape_configs:
     - job_name: 'log_based_metrics'
       static_configs:
           - targets: ['mtail:3903']
+    - job_name: 'bundle_metrics'
+      metrics_path: /metrics/prometheus
+      static_configs:
+          - targets: ['nginx:80']

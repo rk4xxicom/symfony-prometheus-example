@@ -1,0 +1,10 @@
+artprima_prometheus_metrics:
+    namespace: prometheus_app
+    type: redis
+    ignored_routes: [prometheus_bundle_prometheus, _wdt]
+    redis:
+        host: redis
+        port: 6379
+        timeout: 0.1
+        read_timeout: 10
+        persistent_connections: false

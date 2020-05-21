@@ -54,6 +54,9 @@ services:
         volumes:
             - ./var/log:/mnt/log
 
+    redis:
+        image: redis
+
     mailhog:
         image: mailhog/mailhog
         ports:

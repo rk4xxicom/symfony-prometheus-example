@@ -37,5 +37,6 @@ RUN if [ ! -z "${HOST_UID}" ]; then \
 ENV WWW_DATA_UID ${HOST_UID}
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} && pecl install redis && docker-php-ext-enable redis
 
 COPY ./config/docker/dev/symfony.pool.conf /usr/local/etc/php-fpm.d/
