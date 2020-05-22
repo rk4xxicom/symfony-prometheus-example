@@ -14,12 +14,6 @@ RUN docker-php-ext-install \
     pdo_pgsql \
     zip
 
-ARG XDEBUG=yes
-RUN if [ "${XDEBUG}" = "yes" ]; then apk add --no-cache --virtual .xdebug-build-deps ${PHPIZE_DEPS} \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
-    && apk del .xdebug-build-deps; fi;
-
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
