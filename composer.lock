@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14191ce563ecbbdc64367ad101f4fa58",
+    "content-hash": "cd43086912682f602cf2964d97a6889b",
     "packages": [
         {
             "name": "artprima/prometheus-metrics-bundle",
@@ -8789,7 +8789,8 @@
         "php": "^7.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "ext-redis": "*"
+        "ext-redis": "*",
+        "ext-apcu": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
